@@ -22,6 +22,8 @@ import androidx.viewpager2.widget.ViewPager2;
 import info.androidhive.viewpager2.MainActivity;
 import info.androidhive.viewpager2.R;
 import info.androidhive.viewpager2.databinding.ActivityViewsSliderBinding;
+import info.androidhive.viewpager2.transformers.CubeInRotationTransformation;
+import info.androidhive.viewpager2.transformers.HorizontalFlipTransformation;
 
 public class ViewsSliderActivity extends AppCompatActivity {
     private ViewsSliderAdapter mAdapter;
@@ -56,7 +58,8 @@ public class ViewsSliderActivity extends AppCompatActivity {
 
         mAdapter = new ViewsSliderAdapter();
         binding.include.viewPager.setAdapter(mAdapter);
-        binding.include.viewPager.setAdapter(mAdapter);
+        // binding.include.viewPager.setOrientation(ViewPager2.ORIENTATION_VERTICAL);
+        // binding.include.viewPager.setPageTransformer(new HorizontalFlipTransformation());
         binding.include.viewPager.registerOnPageChangeCallback(pageChangeCallback);
 
 
