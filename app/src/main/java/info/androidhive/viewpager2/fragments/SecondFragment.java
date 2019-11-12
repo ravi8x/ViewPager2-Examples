@@ -1,4 +1,4 @@
-package info.androidhive.viewpager2.views;
+package info.androidhive.viewpager2.fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

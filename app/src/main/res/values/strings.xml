@@ -30,4 +30,7 @@
 
     <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> welcome slider -> clear data</string>
     <string name="play_again">Play Again</string>
+    <string name="slides_ended">All slides ended. Launch your activity here!</string>
+    <string name="change_orientation">Chagne Orientation</string>
+    <string name="rotate">Rotate</string>
 </resources>

@@ -1,0 +1,12 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_orientation"
+        android:title="@string/change_orientation"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_rotate"
+        android:title="@string/rotate"
+        app:showAsAction="always" />
+</menu>
