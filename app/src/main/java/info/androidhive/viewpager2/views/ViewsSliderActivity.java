@@ -46,8 +46,6 @@ public class ViewsSliderActivity extends AppCompatActivity {
 
         mAdapter = new ViewsSliderAdapter();
         binding.viewPager.setAdapter(mAdapter);
-        // binding.viewPager.setOrientation(ViewPager2.ORIENTATION_VERTICAL);
-        // binding.viewPager.setPageTransformer(new HorizontalFlipTransformation());
         binding.viewPager.registerOnPageChangeCallback(pageChangeCallback);
 
 
@@ -101,7 +99,7 @@ public class ViewsSliderActivity extends AppCompatActivity {
 
     private void launchHomeScreen() {
         Toast.makeText(this, R.string.slides_ended, Toast.LENGTH_LONG).show();
-        startActivity(new Intent(ViewsSliderActivity.this, FragmentViewPagerActivity.class));
+        finish();
     }
 
     private void showMenu(View view) {

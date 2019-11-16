@@ -1,7 +1,6 @@
 package info.androidhive.viewpager2.fragments;
 
 import android.os.Bundle;
-import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,12 +10,14 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import com.google.android.material.tabs.TabLayoutMediator;
 
-import info.androidhive.viewpager2.R;
 import info.androidhive.viewpager2.databinding.ActivityFragmentViewPagerBinding;
 
 public class FragmentViewPagerActivity extends AppCompatActivity {
 
     ActivityFragmentViewPagerBinding binding;
+
+    // tab titles
+    private String[] titles = new String[]{"Movies", "Events", "Tickets"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,20 +32,10 @@ public class FragmentViewPagerActivity extends AppCompatActivity {
         getSupportActionBar().setElevation(0);
 
         binding.viewPager.setAdapter(new ViewPagerFragmentAdapter(this));
+
+        // attaching tab mediator
         new TabLayoutMediator(binding.tabLayout, binding.viewPager,
-                (tab, position) -> {
-                    switch (position) {
-                        case 0:
-                            tab.setText("A");
-                            break;
-                        case 1:
-                            tab.setText("B");
-                            break;
-                        case 2:
-                            tab.setText("C");
-                            break;
-                    }
-                }).attach();
+                (tab, position) -> tab.setText(titles[position])).attach();
     }
 
     private class ViewPagerFragmentAdapter extends FragmentStateAdapter {
@@ -56,12 +47,20 @@ public class FragmentViewPagerActivity extends AppCompatActivity {
         @NonNull
         @Override
         public Fragment createFragment(int position) {
-            return new FirstFragment();
+            switch (position) {
+                case 0:
+                    return new MoviesFragment();
+                case 1:
+                    return new EventsFragment();
+                case 2:
+                    return new TicketsFragment();
+            }
+            return new MoviesFragment();
         }
 
         @Override
         public int getItemCount() {
-            return 3;
+            return titles.length;
         }
     }
 }

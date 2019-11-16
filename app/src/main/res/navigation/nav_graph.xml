@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/FirstFragment"
-        android:name="info.androidhive.viewpager2.fragments.FirstFragment"
+        android:name="info.androidhive.viewpager2.fragments.MoviesFragment"
         android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
+        tools:layout="@layout/fragment_movies">
 
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
@@ -17,9 +17,9 @@
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
-        android:name="info.androidhive.viewpager2.fragments.SecondFragment"
+        android:name="info.androidhive.viewpager2.fragments.TicketsFragment"
         android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
+        tools:layout="@layout/fragment_tickets">
 
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"

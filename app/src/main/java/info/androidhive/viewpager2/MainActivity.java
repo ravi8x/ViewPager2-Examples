@@ -4,28 +4,35 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 
+import info.androidhive.viewpager2.databinding.ActivityMainBinding;
+import info.androidhive.viewpager2.fragments.FragmentViewPagerActivity;
 import info.androidhive.viewpager2.transformers.CubeInDepthTransformation;
 import info.androidhive.viewpager2.transformers.DepthPageTransformer;
 import info.androidhive.viewpager2.transformers.GateTransformation;
 import info.androidhive.viewpager2.transformers.TossTransformation;
 import info.androidhive.viewpager2.transformers.ZoomOutPageTransformer;
+import info.androidhive.viewpager2.views.ViewsSliderActivity;
 
 public class MainActivity extends AppCompatActivity {
-    private ViewPager2 viewPager;
-    private MyPagerAdapter mAdapter;
+    private ActivityMainBinding binding;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        viewPager = findViewById(R.id.pager);
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        mAdapter = new MyPagerAdapter(this, 3);
-        viewPager.setAdapter(mAdapter);
-        viewPager.setPageTransformer(new CubeInDepthTransformation());
+        binding.btnViewsDemo.setOnClickListener(view -> {
+            startActivity(new Intent(MainActivity.this, ViewsSliderActivity.class));
+        });
+
+        binding.btnFragmentDemo.setOnClickListener(view -> {
+            startActivity(new Intent(MainActivity.this, FragmentViewPagerActivity.class));
+        });
     }
 }
