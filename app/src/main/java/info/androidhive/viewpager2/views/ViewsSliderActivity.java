@@ -1,10 +1,10 @@
 package info.androidhive.viewpager2.views;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -18,6 +18,7 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import info.androidhive.viewpager2.R;
 import info.androidhive.viewpager2.databinding.ActivityViewsSliderBinding;
+import info.androidhive.viewpager2.fragments.FragmentViewPagerActivity;
 import info.androidhive.viewpager2.transformers.CubeInDepthTransformation;
 
 public class ViewsSliderActivity extends AppCompatActivity {
@@ -100,6 +101,7 @@ public class ViewsSliderActivity extends AppCompatActivity {
 
     private void launchHomeScreen() {
         Toast.makeText(this, R.string.slides_ended, Toast.LENGTH_LONG).show();
+        startActivity(new Intent(ViewsSliderActivity.this, FragmentViewPagerActivity.class));
     }
 
     private void showMenu(View view) {
