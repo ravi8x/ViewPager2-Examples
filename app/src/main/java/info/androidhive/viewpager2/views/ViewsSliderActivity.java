@@ -1,6 +1,5 @@
 package info.androidhive.viewpager2.views;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.LayoutInflater;
@@ -18,7 +17,6 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import info.androidhive.viewpager2.R;
 import info.androidhive.viewpager2.databinding.ActivityViewsSliderBinding;
-import info.androidhive.viewpager2.fragments.FragmentViewPagerActivity;
 import info.androidhive.viewpager2.transformers.CubeInDepthTransformation;
 
 public class ViewsSliderActivity extends AppCompatActivity {
@@ -47,7 +45,6 @@ public class ViewsSliderActivity extends AppCompatActivity {
         mAdapter = new ViewsSliderAdapter();
         binding.viewPager.setAdapter(mAdapter);
         binding.viewPager.registerOnPageChangeCallback(pageChangeCallback);
-
 
         binding.btnSkip.setOnClickListener(v -> launchHomeScreen());
 
