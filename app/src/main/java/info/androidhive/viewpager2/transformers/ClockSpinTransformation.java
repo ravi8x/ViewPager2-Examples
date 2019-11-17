@@ -4,7 +4,7 @@ import android.view.View;
 
 import androidx.viewpager2.widget.ViewPager2;
 
-public class Clock_SpinTransformation implements ViewPager2.PageTransformer {
+public class ClockSpinTransformation implements ViewPager2.PageTransformer {
     @Override
     public void transformPage(View page, float position) {
 

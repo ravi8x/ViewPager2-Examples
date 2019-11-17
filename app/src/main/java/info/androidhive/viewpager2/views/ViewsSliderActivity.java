@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
 import info.androidhive.viewpager2.R;
+import info.androidhive.viewpager2.Utils;
 import info.androidhive.viewpager2.databinding.ActivityViewsSliderBinding;
 import info.androidhive.viewpager2.transformers.CubeInDepthTransformation;
 
@@ -104,14 +105,11 @@ public class ViewsSliderActivity extends AppCompatActivity {
         MenuInflater inflater = popup.getMenuInflater();
         inflater.inflate(R.menu.pager_transformers, popup.getMenu());
         popup.setOnMenuItemClickListener(item -> {
-            switch (item.getItemId()) {
-                case R.id.action_orientation:
-                    binding.viewPager.setOrientation(ViewPager2.ORIENTATION_VERTICAL);
-                    break;
-                case R.id.action_rotate:
-                    binding.viewPager.setPageTransformer(new CubeInDepthTransformation());
-                    break;
-
+            if (item.getItemId() == R.id.action_orientation) {
+                binding.viewPager.setOrientation(ViewPager2.ORIENTATION_VERTICAL);
+            } else {
+                binding.viewPager.setPageTransformer(Utils.getTransformer(item.getItemId()));
+                binding.viewPager.setCurrentItem(0);
             }
             return false;
         });

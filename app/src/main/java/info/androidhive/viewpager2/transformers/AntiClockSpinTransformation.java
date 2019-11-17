@@ -33,7 +33,6 @@ public class AntiClockSpinTransformation implements ViewPager2.PageTransformer {
         } else {  // (1,+Infinity]
             // This page is way off-screen to the right.
             page.setAlpha(0);
-
         }
     }
 }
