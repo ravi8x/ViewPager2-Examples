@@ -17,12 +17,12 @@ import info.androidhive.viewpager2.transformers.FadeOutTransformation;
 import info.androidhive.viewpager2.transformers.FanTransformation;
 import info.androidhive.viewpager2.transformers.GateTransformation;
 import info.androidhive.viewpager2.transformers.HingeTransformation;
-import info.androidhive.viewpager2.transformers.HorizontalFlipTransformation;
+import info.androidhive.viewpager2.transformers.VerticalFlipTransformation;
 import info.androidhive.viewpager2.transformers.PopTransformation;
 import info.androidhive.viewpager2.transformers.SimpleTransformation;
 import info.androidhive.viewpager2.transformers.SpinnerTransformation;
 import info.androidhive.viewpager2.transformers.TossTransformation;
-import info.androidhive.viewpager2.transformers.VerticalFlipTransformation;
+import info.androidhive.viewpager2.transformers.HorizontalFlipTransformation;
 import info.androidhive.viewpager2.transformers.VerticalShutTransformation;
 import info.androidhive.viewpager2.transformers.ZoomOutPageTransformer;
 
@@ -57,7 +57,7 @@ public class Utils {
             case R.id.action_hinge:
                 return new HingeTransformation();
             case R.id.action_horizontal_flip:
-                return new HorizontalFlipTransformation();
+                return new VerticalFlipTransformation();
             case R.id.action_pop:
                 return new PopTransformation();
             case R.id.action_simple_transformation:
@@ -67,7 +67,7 @@ public class Utils {
             case R.id.action_toss:
                 return new TossTransformation();
             case R.id.action_vertical_flip:
-                return new VerticalFlipTransformation();
+                return new HorizontalFlipTransformation();
             case R.id.action_vertical_shut:
                 return new VerticalShutTransformation();
             case R.id.action_zoom_out:

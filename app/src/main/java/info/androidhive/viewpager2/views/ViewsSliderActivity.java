@@ -18,7 +18,6 @@ import androidx.viewpager2.widget.ViewPager2;
 import info.androidhive.viewpager2.R;
 import info.androidhive.viewpager2.Utils;
 import info.androidhive.viewpager2.databinding.ActivityViewsSliderBinding;
-import info.androidhive.viewpager2.transformers.CubeInDepthTransformation;
 
 public class ViewsSliderActivity extends AppCompatActivity {
     private ViewsSliderAdapter mAdapter;
@@ -110,6 +109,7 @@ public class ViewsSliderActivity extends AppCompatActivity {
             } else {
                 binding.viewPager.setPageTransformer(Utils.getTransformer(item.getItemId()));
                 binding.viewPager.setCurrentItem(0);
+                binding.viewPager.getAdapter().notifyDataSetChanged();
             }
             return false;
         });
@@ -174,5 +174,4 @@ public class ViewsSliderActivity extends AppCompatActivity {
             }
         }
     }
-
 }
